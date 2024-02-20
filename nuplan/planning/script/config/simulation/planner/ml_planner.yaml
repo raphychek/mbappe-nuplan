@@ -1,0 +1,6 @@
+ml_planner:
+  _target_: nuplan.planning.simulation.planner.ml_planner.ml_planner.MLPlanner
+  _convert_: 'all'
+
+  model_config: ${model} #urban_multi_model  # Dictionary key from existing planner model config (e.g. raster_model)
+  checkpoint_path: /nuplan_devkit/urban_multi_model.ckpt  # Path to trained model checkpoint

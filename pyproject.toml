@@ -1,0 +1,43 @@
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+include = ["nuplan/planning/training/modeling/models/np_*"]
+ignore = ["F841"]
+line-length = 120
+select = [
+  "F",  # Pyflakes
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "I",  # isort
+  "UP",  # pyupgrade
+  "YTT",  # flake8-2020
+  "S",  # flake8-bandit
+  "C40",  # flake8-comprehensions
+  "ISC",  # flake8-implicit-str-concat
+  "ICN",  # flake8-import-conventions
+  "PIE",  # flake8-pie
+  "PYI",  # flake8-pyi
+  "SLF",  # flake8-self
+  "SIM",  # flake8-simplify
+  "TID",  # flake8-tidy-imports
+  "TCH",  # flake8-type-checking
+  "NPY",  # numpy
+  "RUF",  # ruff
+  "COM",  # flake8-commas
+  "ARG",  # flake8-unused-arguments
+  "B",  # flake8-bugbear
+  #"A",  # flake8-builtins
+  #"N",  # pep8-naming
+  "C90",  # mccabe
+  "ERA"  # eradicate
+]
+show-fixes = true
+show-source = true
+target-version = "py39"
+
+[tool.ruff.isort]
+lines-after-imports = 2
+
+[tool.ruff.mccabe]
+max-complexity = 12

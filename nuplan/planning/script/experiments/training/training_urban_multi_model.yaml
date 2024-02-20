@@ -1,0 +1,20 @@
+# @package _global_
+job_name: urban_multi_model
+py_func: train
+objective_aggregate_mode: mean
+
+defaults:
+  - override /data_augmentation:
+      - kinematic_history_generic_agent_augmentation
+      - generic_agent_dropout_augmentation_multi
+  - override /objective:
+      - multple_imitation_objective
+  - override /splitter: nuplan
+  - override /model: urban_multi_model
+  - override /scenario_filter: training_scenarios
+  - override /training_metric:
+      - avg_displacement_error
+      - avg_heading_error
+      - final_displacement_error
+      - final_heading_error
+      - multi_avg_displacement_error
